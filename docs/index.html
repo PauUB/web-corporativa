@@ -3,121 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafoli · Desenvolupador Web</title>
+  <meta name="description" content="FoodLogístic S.A. - Distribució i logística alimentària a nivell nacional amb seu a Mataró" />
+  <title>FoodLogístic S.A. | Logística Alimentària</title>
 
-  <!-- ================= CSS ================= -->
+  <!-- ===================== CSS ===================== -->
   <style>
-    /* ---------- Variables ---------- */
     :root {
-      --color-bg: #0f172a;
-      --color-surface: #020617;
-      --color-primary: #38bdf8;
-      --color-text: #e5e7eb;
-      --color-muted: #9ca3af;
-
-      --font-base: 'Inter', system-ui, sans-serif;
-      --radius: 12px;
-      --max-width: 1200px;
+      --color-primary: #2e7d32;
+      --color-secondary: #81c784;
+      --color-dark: #1b1b1b;
+      --color-light: #f9f9f9;
+      --font-main: 'Segoe UI', Tahoma, sans-serif;
     }
 
-    /* ---------- Reset ---------- */
-    *, *::before, *::after {
-      box-sizing: border-box;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: var(--font-base);
-      background-color: var(--color-bg);
-      color: var(--color-text);
+      font-family: var(--font-main);
       line-height: 1.6;
+      background-color: var(--color-light);
+      color: var(--color-dark);
     }
 
     img {
       max-width: 100%;
       display: block;
-      border-radius: var(--radius);
+      border-radius: 0.5rem;
     }
 
-    a {
-      color: var(--color-primary);
-      text-decoration: none;
-    }
-
-    /* ---------- Layout ---------- */
     header {
-      background: linear-gradient(135deg, #020617, #020617cc),
-        url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80")
-        center / cover;
-      padding: 4rem 1rem;
+      background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+      ),
+      url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 4rem 1.5rem;
     }
 
     nav {
-      max-width: var(--max-width);
-      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1100px;
+      margin: 0 auto 2rem;
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 1rem;
+      list-style: none;
+      gap: 1.2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    header h1 {
+      max-width: 1100px;
+      margin: 0 auto;
+      font-size: clamp(2rem, 5vw, 3rem);
     }
 
     main {
-      max-width: var(--max-width);
-      margin: auto;
-      padding: 3rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
       display: grid;
       gap: 4rem;
     }
 
-    section {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    footer {
-      background-color: var(--color-surface);
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--color-muted);
-    }
-
-    /* ---------- Components ---------- */
-    .hero {
-      max-width: var(--max-width);
-      margin: 4rem auto 0;
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      line-height: 1.2;
-    }
-
-    .hero p {
-      max-width: 600px;
-      color: var(--color-muted);
-    }
-
-    .button {
-      align-self: start;
-      background-color: var(--color-primary);
-      color: #020617;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+    section h2 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
     }
 
     .grid {
@@ -125,161 +91,173 @@
       gap: 2rem;
     }
 
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .services article {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
-    .card {
-      background-color: var(--color-surface);
-      padding: 1.5rem;
-      border-radius: var(--radius);
+    form {
       display: grid;
       gap: 1rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
-    .muted {
-      color: var(--color-muted);
+    label {
+      font-weight: 600;
+    }
+
+    input, textarea {
+      padding: 0.6rem;
+      border-radius: 0.4rem;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    button {
+      background-color: var(--color-primary);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: var(--color-secondary);
+    }
+
+    footer {
+      background-color: var(--color-dark);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- ================= HEADER ================= -->
+
+  <!-- ===================== HTML ===================== -->
+
   <header>
-    <nav>
-      <strong>Portafoli</strong>
+    <nav aria-label="Navegació principal">
+      <strong>FoodLogístic S.A.</strong>
       <ul>
-        <li><a href="#sobre">Sobre mi</a></li>
+        <li><a href="#inici">Inici</a></li>
         <li><a href="#serveis">Serveis</a></li>
-        <li><a href="#projectes">Projectes</a></li>
+        <li><a href="#nosaltres">Sobre nosaltres</a></li>
         <li><a href="#contacte">Contacte</a></li>
       </ul>
     </nav>
 
-    <div class="hero">
-      <h1>Desenvolupador Web Especialitzat en Experiències Modernes</h1>
-      <p>
-        Creo interfícies ràpides, accessibles i escalables utilitzant
-        tecnologies web modernes.
-      </p>
-      <a href="#contacte" class="button">Parlem del teu projecte</a>
-    </div>
+    <h1>Experts en distribució i logística alimentària</h1>
   </header>
 
-  <!-- ================= MAIN ================= -->
   <main>
-    <!-- Sobre mi -->
-    <section id="sobre">
-      <h2>Sobre mi</h2>
-      <p class="muted">
-        Sóc desenvolupador web amb experiència en arquitectura front-end,
-        prototipat ràpid i disseny d'interfícies centrades en l'usuari.
+    <section id="inici">
+      <h2>Inici</h2>
+      <p>
+        FoodLogístic S.A. és una empresa capdavantera en la distribució i logística alimentària
+        a nivell nacional. Des de la nostra seu central a Mataró, garantim eficiència,
+        seguretat i puntualitat en cada enviament.
       </p>
-      <img
-        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
-        alt="Espai de treball"
-      />
     </section>
 
-    <!-- Serveis -->
-    <section id="serveis">
+    <section id="serveis" class="services">
       <h2>Serveis</h2>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Front-end</h3>
-          <p class="muted">
-            HTML semàntic, CSS modern i JavaScript net orientat a rendiment.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Prototips</h3>
-          <p class="muted">
-            Creació ràpida de MVPs funcionals per validar idees.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Arquitectura</h3>
-          <p class="muted">
-            Estructures escalables pensades per créixer amb el projecte.
-          </p>
-        </div>
+      <div class="grid">
+        <article>
+          <img src="https://picsum.photos/400/250?food" alt="Distribució alimentària">
+          <h3>Distribució nacional</h3>
+          <p>Transport ràpid i segur de productes alimentaris a tot el territori.</p>
+        </article>
+
+        <article>
+          <img src="https://picsum.photos/400/251?warehouse" alt="Gestió de magatzem">
+          <h3>Gestió de magatzems</h3>
+          <p>Infraestructura moderna per a l’emmagatzematge i control del producte.</p>
+        </article>
+
+        <article>
+          <img src="https://picsum.photos/400/252?truck" alt="Logística refrigerada">
+          <h3>Logística refrigerada</h3>
+          <p>Solucions especialitzades per a productes que requereixen fred.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Projectes -->
-    <section id="projectes">
-      <h2>Projectes</h2>
-      <div class="grid grid-3">
-        <div class="card">
-          <img
-            src="https://picsum.photos/400/250?random=1"
-            alt="Projecte 1"
-          />
-          <h3>Aplicació Web</h3>
-          <p class="muted">Dashboard interactiu amb dades en temps real.</p>
-        </div>
-        <div class="card">
-          <img
-            src="https://picsum.photos/400/250?random=2"
-            alt="Projecte 2"
-          />
-          <h3>Lloc Corporatiu</h3>
-          <p class="muted">Web institucional optimitzada per SEO.</p>
-        </div>
-        <div class="card">
-          <img
-            src="https://picsum.photos/400/250?random=3"
-            alt="Projecte 3"
-          />
-          <h3>Landing Page</h3>
-          <p class="muted">Conversió alta amb disseny clar i directe.</p>
-        </div>
-      </div>
+    <section id="nosaltres">
+      <h2>Sobre nosaltres</h2>
+      <p>
+        Amb anys d’experiència en el sector, FoodLogístic S.A. combina tecnologia,
+        sostenibilitat i coneixement expert per oferir solucions logístiques adaptades
+        a les necessitats dels nostres clients.
+      </p>
     </section>
 
-    <!-- Contacte -->
     <section id="contacte">
       <h2>Contacte</h2>
-      <p class="muted">
-        Escriu-me i comentem com puc ajudar-te amb el teu projecte.
-      </p>
-      <a href="mailto:contacte@exemple.com" class="button">
-        Enviar correu
-      </a>
+
+      <form id="contactForm" aria-label="Formulari de contacte">
+        <div>
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+
+        <div>
+          <label for="email">Correu electrònic</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="telefon">Telèfon de contacte</label>
+          <input type="tel" id="telefon" name="telefon">
+        </div>
+
+        <div>
+          <label for="missatge">Missatge</label>
+          <textarea id="missatge" name="missatge" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer>
-    <p>© 2026 · Desenvolupament Web Modern</p>
+    <p>© 2026 FoodLogístic S.A. · Mataró</p>
   </footer>
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- ===================== JavaScript ===================== -->
   <script>
     /**
-     * scrollSuau
-     * Afegeix desplaçament suau als enllaços interns
+     * Gestió bàsica del formulari de contacte
+     * No envia dades, només simula validació
      */
-    function activarScrollSuau() {
-      const links = document.querySelectorAll('a[href^="#"]');
+    (function () {
+      const form = document.getElementById('contactForm');
 
-      links.forEach(link => {
-        link.addEventListener('click', event => {
-          event.preventDefault();
-          const target = document.querySelector(link.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Gràcies pel teu missatge! Ens posarem en contacte aviat.');
+        form.reset();
       });
-    }
-
-    // Inicialització
-    document.addEventListener('DOMContentLoaded', () => {
-      activarScrollSuau();
-    });
+    })();
   </script>
-  <!-- Default Statcounter code for FoodLogistic
+<!-- Default Statcounter code for FoodLogistic
 https://pauub.github.io/web-corporativa/ -->
 <script type="text/javascript">
 var sc_project=13214966; 
